@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable name="sepetToolbarBaslik" type="String" />
+        <variable name="sepetToolbarBaslik2" type="String" />
+        <variable name="sepetFragment" type="com.recepgemalmaz.fastfork.ui.fragment.SepetFragment" />
+        <variable name="sepetAdapter" type="com.recepgemalmaz.fastfork.ui.adapter.SepetAdapter" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.fragment.SepetFragment">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarSepet"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/renk2"
+            android:gravity="center"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:subtitleTextColor="@color/renk2"
+            app:title="@{sepetToolbarBaslik}"
+
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/RecyclerViewSepet"
+            android:layout_width="0dp"
+            android:layout_height="490dp"
+            android:adapter="@{sepetAdapter}"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbarSepet" />
+
+        <Button
+            android:id="@+id/btnSiparisVer"
+            android:layout_width="190dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="6dp"
+            android:backgroundTint="@color/renk1"
+            android:fontFamily="@font/lobster"
+            android:onClick="@{() -> sepetFragment.btnTikla(btnSiparisVer)}"
+            android:text="Sepeti Onayla"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/textViewToplam"
+            app:layout_constraintTop_toBottomOf="@+id/RecyclerViewSepet" />
+
+        <TextView
+            android:id="@+id/textViewToplam"
+            android:layout_width="190dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bottom_nav_bg_1"
+            android:fontFamily="@font/lobster"
+            android:gravity="center"
+            android:text="Toplam: 24₺"
+            android:textAlignment="center"
+            android:textColor="@color/design_default_color_on_secondary"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/btnSiparisVer"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/RecyclerViewSepet" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="111dp"
+            android:layout_height="49dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/lobster"
+            android:text="@{sepetToolbarBaslik2}"
+            android:textColor="@color/white"
+            android:textSize="34sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/toolbarSepet"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/toolbarSepet" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

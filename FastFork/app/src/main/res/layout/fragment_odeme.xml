@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="odemeFragment"
+            type="com.recepgemalmaz.fastfork.ui.fragment.OdemeFragment" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.fragment.OdemeFragment">
+
+        <Button
+            android:id="@+id/tekrarSiparis"
+            android:layout_width="263dp"
+            android:layout_height="53dp"
+            android:backgroundTint="@color/renk2"
+            android:fontFamily="@font/lobster"
+            android:onClick="@{() -> odemeFragment.gecisYap(imageView10)}"
+            android:text="Tekrar Siparis Ver"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+        <ImageView
+            android:id="@+id/imageView10"
+            android:layout_width="330dp"
+            android:layout_height="272dp"
+            android:layout_marginTop="32dp"
+            android:src="@drawable/odeme"
+            app:layout_constraintBottom_toTopOf="@+id/textView9"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="386dp"
+            android:layout_height="190dp"
+            android:layout_marginTop="32dp"
+            android:fontFamily="@font/lobster"
+            android:gravity="center"
+            android:text="SİPARİŞİNİZ YOLA ÇIKTI"
+            android:textColor="@color/black"
+            android:textSize="60sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/tekrarSiparis"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView10" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
